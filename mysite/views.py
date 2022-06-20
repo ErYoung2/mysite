@@ -1,4 +1,6 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
-def demopage(request):
-    return HttpResponse("This is a test page.")
+def index(request):
+    context = {}
+    context["name"] = "Hello world"
+    return render(request,"index.html",context)
